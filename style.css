@@ -25,6 +25,9 @@ h2::after {
 
 .dflex {
     display: flex;
+    flex-wrap: wrap;
+
+    
 }
 
 .jst-btw {
@@ -40,6 +43,7 @@ h2::after {
     font-weight: 500;
     text-decoration: none;
     margin-left: 50px;
+    display: inline-block;
 }
 
 .menu a:hover {
@@ -77,7 +81,7 @@ h2::after {
 
 
 .contato {
-    width: 450px;
+    width: 45%;
 }
 
 .contato input[type=text], .contato input[type=email], .contato textarea {
@@ -87,6 +91,7 @@ h2::after {
     border: none;
     border-bottom: #13203f 1px solid;
     margin-bottom: 15px;
+    resize: none;
     
 }
 
@@ -103,7 +108,30 @@ h2::after {
     box-sizing: border-box;
 }
 
+::-webkit-input-placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 3px;
+    box-sizing: border-box;
+}
+
+:-ms-input-placeholder { /* internet explorer */
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 3px;
+    box-sizing: border-box;
+}
+
 textarea::placeholder {
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+
+textarea:-ms-input-placeholder { /* internet explorer */
     padding-top: 80px;
     box-sizing: border-box;
 }
@@ -131,5 +159,81 @@ textarea::placeholder {
     background-position: center;
 }
 
-@media and screen
+@media screen and (max-width: 1024px) {
+
+    #topo .container {
+        flex-direction: column;
+    }
+
+    .menu a {
+        margin: 25px 25px 0 25px;
+    }
+
+    .borda {
+        padding-top: 5px;
+        width: 570px;
+    }
+
+    #banner {
+        height: 300px;
+        background-position: right;
+    }
+}
+
+@media screen and (max-width:767px) {
+
+
+    .menu {
+        display: none;
+        text-align: center;
+        width: 320px;
+
+    }
+
+    .menu a {
+        display: block;
+        padding: 20px 0;
+        border-bottom: solid #f5f5f5 3px;
+        margin: 0;
+        
+    }
+
+    .menu a:last-child {
+        border: none;
+    }
+
+    .barra {
+        width: 35px;
+        height: 3px;
+        background-color: #f5f5f5;
+        margin-bottom: 5px;
+    }
+
+    .x .barra:nth-child(2){
+        opacity: 0;
+    }
+    
+    .x .barra:nth-child(1){
+        transform: rotate(45deg) translate(12px,10px);
+    }
+    
+    .x .barra:nth-child(3){
+        transform: rotate(-45deg) translate(1px,0px);
+    }
+
+    .borda {
+        width: 320px;
+    }
+
+    #btn-menu {
+        position: absolute;
+        right: 30px;
+        top: 45px;
+        
+    }
+
+    
+
+
+}
 
